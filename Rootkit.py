@@ -12,6 +12,7 @@ Banner_Text = """
         ██║  ██║╚██████╔╝╚██████╔╝   ██║   ██║  ██╗██║   ██║   
         ╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝   ╚═╝ 
         """
+os.system('clear')
 print(Banner_Text)
 #Variables
 SignedUp = False
