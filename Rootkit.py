@@ -1,8 +1,8 @@
 #Packages
 import os
 import glob
-import keyboard
 import time
+import socket
 
 Banner_Text = """
         ██████╗  ██████╗  ██████╗ ████████╗██╗  ██╗██╗████████╗
@@ -12,7 +12,6 @@ Banner_Text = """
         ██║  ██║╚██████╔╝╚██████╔╝   ██║   ██║  ██╗██║   ██║   
         ╚═╝  ╚═╝ ╚═════╝  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚═╝   ╚═╝ 
         """
-os.system('clear')
 print(Banner_Text)
 #Variables
 SignedUp = False
@@ -75,6 +74,17 @@ def EncryptDecrypt():
         result = ''
     elif choice != '0':
         print('You have entered an invalid input, please try again. \n\n')
+#Host To Ip
+def HostToIp():
+  HostInput = str(input('Enter a host: '))
+  Host = socket.gethostname()
+  IpAddr = socket.gethostbyname(HostInput)
+  print('Host:',Host,'\n','Ip:',IpAddr)
+  svInput = str(input('Do you want to save the data? '))
+  if svInput == "Yes":
+    data = open('Data.txt', 'w')
+    data.write(IpAddr)
+    data.close
 #RootKit Main
 AccountCreation()
 #Options
@@ -92,8 +102,12 @@ if OptionInput == "3":
   os.system('clear')
   print(Banner_Text)
   EncryptDecrypt()
+#Host to Ip
+if OptionInput =="4":
+  HostToIp()
 #Exit 
-if OptionInput == "4":
+if OptionInput == "5":
   os.system('clear')
   print(Banner_Text)
   print('(-)Connection Lost . . .')
+  #015793eab130
